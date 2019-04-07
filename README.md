@@ -1,10 +1,9 @@
 # my-braider
-
 Contributors:
-   * Hiwot
    * Ayomide
    * Ezra Mengiste
    * Henok Tasissa
+   * Hiwot Gezahegn
    * Oji Ofong
    * Tadele Lamma
    * Yemane Zewdu
