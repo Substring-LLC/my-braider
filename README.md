@@ -2,7 +2,7 @@
 
 Contributors:
   
-   * Ayomide
+   * Ayomide Johnson
    * Ezra Mengiste
    * Henok Tasissa
    * Hiwot Gezahegn
@@ -10,7 +10,7 @@ Contributors:
    * Tadele Lamma
    * Yemane Zewdu
 
-   
+
 A new Flutter application.
 
 ## Getting Started
