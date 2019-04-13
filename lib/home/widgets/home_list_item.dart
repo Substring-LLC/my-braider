@@ -66,6 +66,7 @@ class HomeListItem extends StatelessWidget {
 
         // )
         new Container(
+            color: Colors.white,
             padding: const EdgeInsets.all(10),
             child: new Row(
               children: <Widget>[

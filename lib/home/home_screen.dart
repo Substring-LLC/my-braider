@@ -48,12 +48,15 @@ class HomeScreenState extends State<HomeScreen> {
 //      appBar: AppBar(
 //        title: Text("Welcome to myBraider"),
 //      ),
-      body: PageView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return _pages[index];
-        },
-        itemCount: _pages.length,
-        controller: _pageController,
+      body: Container(
+        color: Theme.of(context).primaryColor,
+        child: PageView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return _pages[index];
+          },
+          itemCount: _pages.length,
+          controller: _pageController,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onPageSelected,
