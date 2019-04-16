@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_braider/home/favorites/favorite_screen.dart';
+import 'package:my_braider/home/favorites/favorites_list_item.dart';
 import 'package:my_braider/home/widgets/home_list_item.dart';
 import 'package:my_braider/home/widgets/home_sliver_appbar.dart';
 import 'package:my_braider/home/model/user.dart';
@@ -27,7 +29,17 @@ class HomeScreenState extends State<HomeScreen> {
       ],
     ),
     Container(color: Colors.purple),
-    Container(color: Colors.yellow),
+    new CustomScrollView(
+      slivers: <Widget>[
+        HomeSliverAppBar(),
+        SliverList(
+          delegate:
+          SliverChildBuilderDelegate((BuildContext context, int index) {
+            return FavoritesListItem(getFakeUser(index));
+          }, childCount: 5),
+        ),
+      ],
+    ),
     Container(color: Colors.cyan),
   ];
 
@@ -72,12 +84,15 @@ class HomeScreenState extends State<HomeScreen> {
             title: Text("Appointments"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text("Profile"),
+            icon: Icon(Icons.favorite_border),
+            title: Text("Favorite"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text("Settings"),
+              icon: Icon(Icons.person),
+              title: Text("Profile")
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.settings),
+//            title: Text("Settings"),
           ),
         ],
       ),
