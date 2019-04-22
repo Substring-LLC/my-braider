@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_braider/home/favorites/favorite_screen.dart';
-import 'package:my_braider/home/favorites/favorites_list_item.dart';
 import 'package:my_braider/home/widgets/home_list_item.dart';
 import 'package:my_braider/home/widgets/home_sliver_appbar.dart';
 import 'package:my_braider/home/model/user.dart';
@@ -13,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  static const _kDuration = const Duration(milliseconds: 300);
+  static const _kDuration = const Duration(milliseconds: 10);
   static const _kCurve = Curves.ease;
 
   final List<Widget> _pages = <Widget>[
@@ -34,9 +33,9 @@ class HomeScreenState extends State<HomeScreen> {
         HomeSliverAppBar(),
         SliverList(
           delegate:
-          SliverChildBuilderDelegate((BuildContext context, int index) {
-            return FavoritesListItem(getFakeUser(index));
-          }, childCount: 5),
+              SliverChildBuilderDelegate((BuildContext context, int index) {
+            return HomeListItem(getFakeUser(index));
+          }, childCount: 7),
         ),
       ],
     ),
@@ -60,15 +59,12 @@ class HomeScreenState extends State<HomeScreen> {
 //      appBar: AppBar(
 //        title: Text("Welcome to myBraider"),
 //      ),
-      body: Container(
-        color: Theme.of(context).primaryColor,
-        child: PageView.builder(
-          itemBuilder: (BuildContext context, int index) {
-            return _pages[index];
-          },
-          itemCount: _pages.length,
-          controller: _pageController,
-        ),
+      body: PageView.builder(
+        itemBuilder: (BuildContext context, int index) {
+          return _pages[index];
+        },
+        itemCount: _pages.length,
+        controller: _pageController,
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onPageSelected,
@@ -88,12 +84,11 @@ class HomeScreenState extends State<HomeScreen> {
             title: Text("Favorite"),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text("Profile")
+              icon: Icon(Icons.person), title: Text("Profile")
 //          BottomNavigationBarItem(
 //            icon: Icon(Icons.settings),
 //            title: Text("Settings"),
-          ),
+              ),
         ],
       ),
     );
@@ -108,6 +103,11 @@ User getFakeUser(int index) {
   u.coverPhotoUrl =
       "https://media1.fdncms.com/sacurrent/imager/u/original/2445474/10665167_961009080597312_8875901690001311835_n.jpg";
   u.ratings = 4.5;
-  u.distance= 0.1;
+  u.distance = 0.1;
+  u.numberOfReviews = 100;
+  u.averageRating = 4.5;
+  u.city = "Washington";
+  u.state = "DC";
+  u.zipCode = "20011";
   return u;
 }

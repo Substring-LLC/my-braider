@@ -52,32 +52,57 @@ class HomeListItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(user.displayName,
-                          textScaleFactor: 1.5,
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    new Row(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.fromLTRB(0, 0.0, 0.0, 6.0),
+                          child: Text(
+                            user.displayName,
+                            textScaleFactor: 1.4,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Container(),
+                              SmoothStarRating(starCount: 5, rating: 4.4),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.only(bottom: 6),
-                      child: Text(
-                        user.address,
-                        style: TextStyle(fontSize: 15),
-                      ),
+                    new Row(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.fromLTRB(0, 0.0, 0.0, 6.0),
+                          child: Text(
+                            user.address,
+                            style: TextStyle(fontSize: 17),
+                          ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                  " ${user.averageRating} | ${user.numberOfReviews} reviews",
+                                  style: TextStyle(fontSize: 18.0))
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      "Wash, DC 20011 | ${user.distance} miles",
-                      style: TextStyle(fontSize: 15),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    SmoothStarRating(starCount: 5, rating: 4.4),
-                    Text("120 reviews", style: TextStyle(fontSize: 15))
+                    new Row(
+                      children: <Widget>[
+                        Container(
+                          child: Text(
+                              "${user.city}, ${user.state} ${user.zipCode} | ${user.distance} miles",
+                              style: TextStyle(fontSize: 17)),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),
