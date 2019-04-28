@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_braider/common/widgets/page_view_indicator_container.dart';
+import 'package:my_braider/home/model/user.dart';
+import 'package:my_braider/userdetail/services_page.dart';
+import 'package:my_braider/userdetail/standard_page.dart';
 
 class UserDetailScreen extends StatefulWidget {
+  UserDetailScreen(this.user);
+
+  final User user;
+
   @override
-  State createState() => new UserDetailScreenState();
+  State createState() => new UserDetailScreenState(this.user);
 }
 
 class UserDetailScreenState extends State<UserDetailScreen> {
+  UserDetailScreenState(this.user);
+
+  final User user;
+
   var tabTitles = ["Services", "Details", "Reviews", "Portfolio"];
   static final _controller = new PageController();
 
@@ -68,8 +79,12 @@ class UserDetailScreenState extends State<UserDetailScreen> {
             ];
           },
           body: Center(
-            child: Text("Sample body text"),
-          ),
+              child: TabBarView(children: [
+            ServicesPage(user),
+            StandardPage(),
+            StandardPage(),
+            StandardPage()
+          ])),
         ),
       ),
     );
@@ -92,6 +107,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new Container(
       child: _tabBar,
+      color: Colors.white,
     );
   }
 

@@ -17,7 +17,7 @@ class HomeListItem extends StatelessWidget {
   void launchUserDetailScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => UserDetailScreen()),
+      MaterialPageRoute(builder: (context) => UserDetailScreen(this.user)),
     );
   }
 
