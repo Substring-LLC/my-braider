@@ -48,8 +48,10 @@ class UserDetailScreenState extends State<UserDetailScreen> {
                         color: Colors.white,
                         fontSize: 16.0,
                       )),
-                  background:
-                  PageViewIndicatorContainer(pageView, _pages.length),
+                  background: PageViewIndicatorContainer(
+                    pageView,
+                    _pages.length,
+                  ),
                 ),
               ),
               SliverPersistentHeader(
@@ -71,12 +73,12 @@ class UserDetailScreenState extends State<UserDetailScreen> {
           },
           body: Center(
             child: TabBarView(
-                children: [
-                  StandardPage(),
-                  StandardPage(),
-                  StandardPage(),
-                  PortfolioPage()
-                ]
+              children: [
+                StandardPage(),
+                StandardPage(),
+                StandardPage(),
+                PortfolioPage(),
+              ],
             ),
           ),
         ),
