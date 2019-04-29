@@ -67,7 +67,7 @@ class HomeListItem extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: <Widget>[
                               Container(),
-                              SmoothStarRating(starCount: 5, rating: 4.4),
+                              SmoothStarRating(starCount: 5, rating: 4.4, size: 20.0),
                             ],
                           ),
                         ),
@@ -88,7 +88,7 @@ class HomeListItem extends StatelessWidget {
                             children: <Widget>[
                               Text(
                                   " ${user.averageRating} | ${user.numberOfReviews} reviews",
-                                  style: TextStyle(fontSize: 18.0))
+                                  style: TextStyle(fontSize: 15.0))
                             ],
                           ),
                         ),
