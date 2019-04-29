@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_braider/common/widgets/page_view_indicator_container.dart';
+import 'package:my_braider/userdetail/portfolio_screen.dart';
+import 'package:my_braider/userdetail/standard_page.dart';
 
 class UserDetailScreen extends StatefulWidget {
   @override
@@ -46,8 +48,10 @@ class UserDetailScreenState extends State<UserDetailScreen> {
                         color: Colors.white,
                         fontSize: 16.0,
                       )),
-                  background:
-                      PageViewIndicatorContainer(pageView, _pages.length),
+                  background: PageViewIndicatorContainer(
+                    pageView,
+                    _pages.length,
+                  ),
                 ),
               ),
               SliverPersistentHeader(
@@ -68,7 +72,14 @@ class UserDetailScreenState extends State<UserDetailScreen> {
             ];
           },
           body: Center(
-            child: Text("Sample body text"),
+            child: TabBarView(
+              children: [
+                StandardPage(),
+                StandardPage(),
+                StandardPage(),
+                PortfolioPage(),
+              ],
+            ),
           ),
         ),
       ),
@@ -92,6 +103,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new Container(
       child: _tabBar,
+      color: Colors.white,
     );
   }
 

@@ -91,6 +91,7 @@ unlinked_spec.ds
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+*.pbxproj
 
 # Coverage
 coverage/

@@ -19,17 +19,17 @@ class HomeScreenState extends State<HomeScreen> {
       slivers: <Widget>[
         HomeSliverAppBar(),
         SliverList(
-          delegate:
-              SliverChildBuilderDelegate((BuildContext context, int index) {
-            return HomeListItem(getFakeUser(index));
-          }, childCount: 15),
-        ),
-      ],
-    ),
-    Container(color: Colors.purple),
-    Container(color: Colors.yellow),
-    Container(color: Colors.cyan),
-  ];
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
+              return HomeListItem(getFakeUser(index));
+            }, childCount: 15),
+          ),
+        ],
+      ),
+      Container(color: Colors.purple),
+      Container(color: Colors.yellow),
+      Container(color: Colors.cyan),
+    ];
 
   int _selectedPageIndex = 0;
   PageController _pageController = PageController();
