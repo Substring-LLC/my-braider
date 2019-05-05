@@ -25,7 +25,6 @@ class HomeListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Column(
-
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -37,7 +36,6 @@ class HomeListItem extends StatelessWidget {
             _showSnackBar(context, "onLongPress ${user.displayName}");
           },
           child: Container(
-
             height: 200,
             width: screenWidth,
             child: CachedNetworkImage(
@@ -71,26 +69,25 @@ class HomeListItem extends StatelessWidget {
               children: <Widget>[
                 new Expanded(
                     child: new Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        new Container(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child:new Text(user.displayName,
-                              textScaleFactor: 1.5,
-                              style: new TextStyle(fontWeight: FontWeight.bold)),
-                        ),
-                        new Container(
-                            padding: const EdgeInsets.only(bottom: 6),
-                            child: new Text(user.address,style: new TextStyle(
-                                fontSize: 15,
-                                color: Colors.red[300])
-                            )),
-                        new Text("Wash, DC 20011 | ${user.distance} miles", style: new TextStyle(fontSize: 15,
-                            color: Colors.red[300])),
-                        //new Text("", style: new TextStyle(fontSize: 15))
-                      ],
-                    )
-                ),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    new Container(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: new Text(user.displayName,
+                          textScaleFactor: 1.5,
+                          style: new TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    new Container(
+                        padding: const EdgeInsets.only(bottom: 6),
+                        child: new Text(user.address,
+                            style: new TextStyle(
+                                fontSize: 15, color: Colors.red[300]))),
+                    new Text("Wash, DC 20011 | ${user.distance} miles",
+                        style: new TextStyle(
+                            fontSize: 15, color: Colors.red[300])),
+                    //new Text("", style: new TextStyle(fontSize: 15))
+                  ],
+                )),
                 new Expanded(
                     child: new Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -100,18 +97,13 @@ class HomeListItem extends StatelessWidget {
 //                    child:new Text("${user.ratings}",style: new TextStyle(fontSize: 15)
 //                    )
 //                  ),
-                          SmoothStarRating(
-                              starCount: 5,
-                              rating: 4.4),
+                      SmoothStarRating(starCount: 5, rating: 4.4),
 
-                          new Text("120 reviews",style: new TextStyle(fontSize: 15))
-                        ]
-                    )
-                )
-
-
-              ],)
-        )
+                      new Text("120 reviews",
+                          style: new TextStyle(fontSize: 15))
+                    ]))
+              ],
+            ))
       ],
     );
   }
