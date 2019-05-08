@@ -19,17 +19,17 @@ class HomeScreenState extends State<HomeScreen> {
       slivers: <Widget>[
         HomeSliverAppBar(),
         SliverList(
-          delegate:
-              SliverChildBuilderDelegate((BuildContext context, int index) {
-            return HomeListItem(getFakeUser(index));
-          }, childCount: 15),
-        ),
-      ],
-    ),
-    Container(color: Colors.purple),
-    Container(color: Colors.yellow),
-    Container(color: Colors.cyan),
-  ];
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
+              return HomeListItem(getFakeUser(index));
+            }, childCount: 15),
+          ),
+        ],
+      ),
+      Container(color: Colors.purple),
+      Container(color: Colors.yellow),
+      Container(color: Colors.cyan),
+    ];
 
   int _selectedPageIndex = 0;
   PageController _pageController = PageController();
@@ -48,12 +48,15 @@ class HomeScreenState extends State<HomeScreen> {
 //      appBar: AppBar(
 //        title: Text("Welcome to myBraider"),
 //      ),
-      body: PageView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return _pages[index];
-        },
-        itemCount: _pages.length,
-        controller: _pageController,
+      body: Container(
+        color: Theme.of(context).primaryColor,
+        child: PageView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return _pages[index];
+          },
+          itemCount: _pages.length,
+          controller: _pageController,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onPageSelected,
