@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_braider/common/widgets/page_view_indicator_container.dart';
-import 'package:my_braider/userdetail/portfolio_screen.dart';
+import 'package:my_braider/home/model/user.dart';
+import 'package:my_braider/userdetail/services_page.dart';
 import 'package:my_braider/userdetail/standard_page.dart';
 
 class UserDetailScreen extends StatefulWidget {
+  UserDetailScreen(this.user);
+
+  final User user;
+
   @override
-  State createState() => new UserDetailScreenState();
+  State createState() => new UserDetailScreenState(this.user);
 }
 
 class UserDetailScreenState extends State<UserDetailScreen> {
+  UserDetailScreenState(this.user);
+
+  final User user;
+
   var tabTitles = ["Services", "Details", "Reviews", "Portfolio"];
   static final _controller = new PageController();
 
@@ -48,10 +57,8 @@ class UserDetailScreenState extends State<UserDetailScreen> {
                         color: Colors.white,
                         fontSize: 16.0,
                       )),
-                  background: PageViewIndicatorContainer(
-                    pageView,
-                    _pages.length,
-                  ),
+                  background:
+                      PageViewIndicatorContainer(pageView, _pages.length),
                 ),
               ),
               SliverPersistentHeader(
@@ -72,15 +79,12 @@ class UserDetailScreenState extends State<UserDetailScreen> {
             ];
           },
           body: Center(
-            child: TabBarView(
-              children: [
-                StandardPage(),
-                StandardPage(),
-                StandardPage(),
-                PortfolioPage(),
-              ],
-            ),
-          ),
+              child: TabBarView(children: [
+            ServicesPage(user),
+            StandardPage(),
+            StandardPage(),
+            StandardPage()
+          ])),
         ),
       ),
     );

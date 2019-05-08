@@ -93,6 +93,28 @@ User getFakeUser(int index) {
   u.coverPhotoUrl =
       "https://media1.fdncms.com/sacurrent/imager/u/original/2445474/10665167_961009080597312_8875901690001311835_n.jpg";
   u.ratings = 4.5;
-  u.distance= 0.1;
+  u.distance = 0.1;
+  u.service = [
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+    "GENERIC BRAID",
+  ];
   return u;
 }

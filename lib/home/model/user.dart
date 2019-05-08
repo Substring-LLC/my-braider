@@ -7,4 +7,5 @@ class User {
   int numberOfReviews;
   double ratings;
   double distance;
+  var service;
 }
