@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "322896137188",
+    "firebase_url": "https://mybraider-c70de.firebaseio.com",
+    "project_id": "mybraider-c70de",
+    "storage_bucket": "mybraider-c70de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322896137188:android:25916823d20304b3",
+        "android_client_info": {
+          "package_name": "com.example.mybraider2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322896137188-jemkq6rke6skpvrjra7550dk3f7744oh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfJY0XTMl_w9oDqoHHVhJgn3-IIyqWYLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322896137188-jemkq6rke6skpvrjra7550dk3f7744oh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
