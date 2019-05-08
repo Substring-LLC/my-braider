@@ -64,20 +64,13 @@ class ServicesPage extends StatelessWidget {
                                   fontSize: 10, fontWeight: FontWeight.normal)),
                         ],
                       ),
-                      new Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          RaisedButton(
-                            color: Colors.blue[400],
-                            child: Text("BOOK",
-                                style: new TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600)),
-                            onPressed: _showSnack,
-                          ),
-                        ],
+                      RaisedButton(
+                        color: Colors.blue[400],
+                        child: Text("BOOK",
+                            style: new TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600)),
+                        onPressed: _showSnack,
                       ),
                     ],
                   ),
